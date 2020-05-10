@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
+    <!-- FontAwsome -->
+  <script src="https://kit.fontawesome.com/65b6d5090a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg_blueDark">
+    <div class="container">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> -->
+      <!-- </button> -->
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Editar perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cerrar sesion</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header -->
+  <div class="container">
+    <div class="row header">
+      <div class="col-md-3">
+        <img src="Img/Svg/dollar-sign-solid.svg" alt="" class="svg_dolar">
+      </div>
+      <div class="col-md-7">
+        <p class="display-4 p-header">
+          Bienvenido Nombre a tu aplicacion
+          de tareas mas segura, sencilla y
+          veloz
+        </p>
+      </div>
+      <div class="col-md-2 text-center">
+        <img src="Img/perfil.jpg" alt="" class="perfil">
+        <div class="text-center my-3">
+          <p class="mb-0">Nombre Apellido</p>
+          <p class="mt-0">Email@email</p>
+          <div class="fondo">
+            <p class="titles_estate">fondo</p>
+            <p class="descript_state">10,000</p>
+          </div>
+          <div class="tareas_articulos">
+            <p class="titles_estate">Tareas/Articulos</p>
+            <p class="descript_state">5/5</p>
+          </div>
+        </div>
+        <div class="fecha text-center">
+          <i class="far fa-calendar-alt ico-2x"></i>
+          <p class="descript_state">##/##/####</p>
+        </div>
+        <div class="notification text-center">
+        <i class="far fa-bell ico-2x notification-ico">
+        <p class="notification-number d-flex justify-content-center align-items-center">1</p>
+        </i>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3">
+    <h2 class="text-center mt-5">Lista de articulos</h2>
+    <div class="app" id="app">
+    <div class="alert bg_blueLight text-white row" role="alert">
+      <div class="col-md-6">      
+        <p class="title_pestañas">title</p>
+        <p class="descript_pestañas">descripcion</p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <i class="fas fa-chevron-down chevron_down_ico"></i>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>  
+
+</body>
+
+</html>
+
