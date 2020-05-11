@@ -12,9 +12,9 @@
     background: #1D7792;
 }
 
-.svg_dolar {
-    height: 344px;
-    width: 193px;
+.ico-init{
+    font-size: 300px;
+    color: #00909E;
 }
 
 .header {
@@ -61,19 +61,80 @@
     font-size: 9.5px;
     color: #ffffff;
 }
+.ico-toggle{
+    font-size: 1.5rem;
+}
 .title_pestañas{
+    color: #fff;
     margin-bottom: 2px;
     font-size: 40px;
 }
 .descript_pestañas{
+    color: #fff;
     margin-top: 0;
     font-size: 17px;
 }
 .alert{
+    margin-left: 0;
+
     height: 135px;
+    margin-bottom: 0;
 }
 .chevron_down_ico{
     font-size: 50px;
+}
+.data_toggle{
+    margin-left: 0;
+    margin-top: 0;
+    width: 1602px;
+    height: 500px;
+    border: 1px solid #707070;
+}
+.card-header{
+    /* display: flex;
+    flex-direction: row; */
+}
+.text-card{
+    font-size: 20px;
+}
+.linea_lateral{
+    margin-left: 64px;
+    background: #000;
+    height: 102px;
+    width: 1px;
+}
+.badge{
+    width: 86px;
+    height: 28px;
+}
+.card_description{
+    font-size: 1.05rem;
+    margin-left: 2rem;
+    width: 85%;
+}
+/* Group of buttons */
+.btn-comprado{
+    background-color: #10AC84;
+    color: #fff;
+    margin-left: 2rem;
+}
+.btn-agregar{
+    background-color: #1D7792;
+    color: #fff;
+}
+.btn-editar{
+    background-color: #1D7792;
+    color: #fff;
+}
+.btn-eliminar{
+    background-color: #1D7792;
+    color: #fff;
+}
+.ico-agregar{
+    color:#10AC84;
+}
+.ico-edit{
+    
 }
 /* Mediaqueries */
 @media screen and (min-width: 1080px){
