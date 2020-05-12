@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>App Task</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
@@ -19,14 +19,18 @@
   <!-- Nav -->
   <nav class="navbar navbar-expand-lg navbar-dark bg_blueDark">
     <div class="container">
-
+      <div class="ico-menu">
+        <a href="http://localhost/xampp/App_tasksV2/">
+          <i class="fas fa-sticky-note text-white h5"></i>
+        </a>
+      </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Contacto<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/contacto.html">Contacto<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Editar perfil</a>
+            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/perfilEdit.html">Editar perfil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Cerrar sesion</a>
@@ -49,7 +53,7 @@
   <div class="container">
     <div class="row header">
       <div class="col-md-3">
-        <i class="fas fa-dollar-sign ico-init"></i>      
+        <i class="fas fa-dollar-sign ico-init"></i>
       </div>
       <div class="col-md-7">
         <p class="display-4 p-header">
@@ -84,7 +88,7 @@
       </div>
     </div>
     <!-- Section pestañas -->
-    <hr class="my-3">
+    <hr class="my-5">
     <h2 class="text-center my-5">Lista de articulos</h2>
     <p class="lead mb-0">Tareas/Articulos</p>
     <i class="fas fa-toggle-on mt-0 mb-5 ico-toggle"></i>
@@ -104,7 +108,7 @@
       </div>
     </div> -->
     <!-- New collapse -->
-    <div class="accordion" id="accordionExample">
+    <div class="accordion my-4" id="accordionExample">
       <div class="card">
         <div class="card-header bg_blueLight" id="headingOne">
           <h2 class="mb-0 d-flex flex-column">
@@ -122,9 +126,9 @@
 
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body d-flex">
-           <div class="time ml-3 mt-3" id="time">
-             <p class="mb-0 text-card">Tiempo esperado:</p>
-             <p class="mt-0 text-card">12 meses</p>
+            <div class="time ml-3 mt-3" id="time">
+              <p class="mb-0 text-card">Tiempo esperado:</p>
+              <p class="mt-0 text-card">12 meses</p>
             </div>
             <div class="linea_lateral"></div>
             <div class="priority ml-3 mt-3" id="priority">
@@ -144,7 +148,8 @@
             <div class="linea_lateral"></div>
             <div class="presupuesto_mensual ml-3 mt-3" id="presupuesto_mensual">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Presupuesto mensual
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -158,13 +163,16 @@
           </div>
           <div class="card_description">
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo minima, ad cum nobis tempore cupiditate pariatur consequatur dolorum sint asperiores temporibus odio quis iure quidem libero tenetur laboriosam dicta eos vitae quisquam quod ducimus rem aut sapiente! Excepturi recusandae distinctio error blanditiis ab? Ipsa, doloribus? Accusantium provident aliquid blanditiis culpa.
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo minima, ad cum nobis tempore cupiditate
+              pariatur consequatur dolorum sint asperiores temporibus odio quis iure quidem libero tenetur laboriosam
+              dicta eos vitae quisquam quod ducimus rem aut sapiente! Excepturi recusandae distinctio error blanditiis
+              ab? Ipsa, doloribus? Accusantium provident aliquid blanditiis culpa.
             </p>
           </div>
           <div class="buttons-group mt-4 mb-3">
             <button class="btn btn-comprado mr-2">Comprado</button>
             <button class="btn btn-agregar mr-2">agregar
-              <i class="fas fa-dollar-sign ico-agregar"></i>      
+              <i class="fas fa-dollar-sign ico-agregar"></i>
             </button>
             <button class="btn btn-editar mr-2">editar
               <i class="fas fa-pen"></i>
@@ -176,7 +184,15 @@
         </div>
       </div>
     </div>
+    <!-- Button add task or article -->
+    <button class="btn bg_blueLight btnNewPestaña mt-4 mb-5">
+      <i class="fas fa-plus text-white btn-plus-pestaña"></i>
+    </button>
   </div>
+  <!-- footer -->
+  <footer class="footer d-flex align-items-center">
+    Derechos reservados a Sergio Luis Hernandez Cruz ©
+  </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>

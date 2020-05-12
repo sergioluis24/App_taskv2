@@ -16,7 +16,14 @@
     font-size: 300px;
     color: #00909E;
 }
-
+.button-clear{
+    background: none;
+    border: none;
+}
+.button-clear:focus{
+    outline: none;
+    box-shadow: none;
+}
 .header {
     margin-top: 54px;
 }
@@ -69,6 +76,20 @@
     margin-bottom: 2px;
     font-size: 40px;
 }
+.title_pestañas:focus{
+    outline: none;
+    box-shadow: none;
+}
+.descript_pestañas:focus{
+    outline: none;
+    box-shadow: none;
+}
+.title_pestañas:hover{
+    color: #fff;
+}
+.descript_pestañas:hover{
+    color: #fff;
+}
 .descript_pestañas{
     color: #fff;
     margin-top: 0;
@@ -112,6 +133,8 @@
     margin-left: 2rem;
     width: 85%;
 }
+
+
 /* Group of buttons */
 .btn-comprado{
     background-color: #10AC84;
@@ -133,8 +156,39 @@
 .ico-agregar{
     color:#10AC84;
 }
-.ico-edit{
+.btnNewPestaña{
+    width: 1585.55px;
+    height: 135px;
+}
+.btn-plus-pestaña{
+    font-size: 50px;
+}
+.footer{
+    width: 100%;
+    height: 64px;
+    background: #142850;
+    color: #ffffff;
+    padding-left: 2rem;
     
+}
+.container-edit{
+    margin-top: 3.3rem;
+}
+.perfil-center{
+    margin-left: 19rem;
+}
+.text-edit{
+    font-size: 3.1rem;
+    font-weight: 300;
+}
+.ico-edit-small{
+    font-size: 1rem;
+}
+.btn-passNew{
+    margin-left: 20rem;
+}
+.container-left{
+    height: 100vh;
 }
 /* Mediaqueries */
 @media screen and (min-width: 1080px){
