@@ -4,6 +4,10 @@
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
+input:focus{
+    outline: none;
+    box-shadow: none;
+}
 
 .bg_blueDark {
     background: #142850;
@@ -197,7 +201,52 @@
     background:none;
 
 }
-/* Mediaqueries */
+.form-regist{
+    width: 50%;
+    border:none;
+    font-size: 1.5rem;
+}
+
+.form-group-regist{
+    /* margin-top: 15rem; */
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5rem;
+}
+.line_forms{
+    width: 20rem ;
+    height: 1px ;
+    background:  #000000;
+}
+.btn-form-regist{
+    position: relative;
+    width: 25rem;
+    height: 5.9rem;
+    margin-bottom: 1rem;
+    border-radius: 50px;
+    font-size: 1.3rem;
+}
+.btn-form-regist:hover{
+    border: 2.5px solid #ffffff;
+}
+.ico-coins{
+    font-size: 20rem;
+}
+.ico-arrow{
+    font-size: 2.3rem;
+}
+/* .btn-form-regist::after{
+    content: "";
+    position: absolute;
+    width:6.274rem;
+    height: 6.274rem;
+    border-radius: 100%;
+    background:red ;
+    top: -4px;
+    left: -25px;
+    z-index: -1;
+} */
+    /* Mediaqueries */
 @media screen and (min-width: 1080px){
     .container{
         min-width: 85%;
