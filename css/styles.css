@@ -235,6 +235,14 @@ input:focus{
 .ico-arrow{
     font-size: 2.3rem;
 }
+.btn-passNew{
+    color: #fff;
+}
+.btn-passNew:hover{
+    border: 1px solid #142850;
+    background: none;
+    color: #142850;
+}
 /* .btn-form-regist::after{
     content: "";
     position: absolute;
