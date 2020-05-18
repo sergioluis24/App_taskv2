@@ -25,26 +25,28 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group-regist d-flex justify-content-center flex-column align-items-center">
-                    <input type="text" class=" form-regist text-center" placeholder="Nombre">
-                    <div class="line_forms mb-5"></div>
-                    <input type="text" class=" form-regist text-center" placeholder="Apellidos">
-                    <div class="line_forms mb-5"></div>
-                    <input type="email" class=" form-regist text-center" placeholder="Email">
-                    <div class="line_forms mb-5"></div>
-                    <input type="password" class=" form-regist text-center" placeholder="Contraseña">
-                    <div class="line_forms mb-5"></div>
-                    <input type="password" class=" form-regist text-center" placeholder="Repite la contraseña">
-                    <div class="line_forms mb-5"></div>
-                    <div class="butto-group-regist">
-                        <button class="btn bg_blueDark text-white d-block btn-form-regist">
-                            Registrar
-                        </button>
-                        <button class="btn bg_blueDark text-white d-block btn-form-regist"><a href="http://localhost/xampp/App_tasksV2/login.html">Ya tengo una cuenta</a></button>
-                    </div>
+                    <form action="Backend/registro.php" method="POST" class="d-flex justify-content-center flex-column align-items-center w-100" onsubmit="return validar_registro()">
+                        <input type="text" class=" form-regist text-center" placeholder="Nombre" required id="nombre" name="nombre">
+                        <div class="line_forms mb-5"></div>
+                        <input type="text" class=" form-regist text-center" placeholder="Apellidos" required id="apellidos" name="apellidos">
+                        <div class="line_forms mb-5"></div>
+                        <input type="email" class=" form-regist text-center" placeholder="Email" required id="email" name="email">
+                        <div class="line_forms mb-5"></div>
+                        <input type="password" class=" form-regist text-center" placeholder="Contraseña" required id="password" name="password">
+                        <div class="line_forms mb-5"></div>
+                        <input type="password" class=" form-regist text-center" placeholder="Repite la contraseña" required id="password_verif" name="password_verif">
+                        <div class="line_forms mb-5"></div>
+                        <div class="butto-group-regist">
+                            <input type="submit" class="btn bg_blueDark text-white d-block btn-form-regist" value="Registrar" id="btn_registrar">
+                            <button class="btn bg_blueDark text-white d-block btn-form-regist"><a href="http://localhost/xampp/App_tasksV2/login.html">Ya tengo una cuenta</a></button>
+                        </div>
+       
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    <script src="backend/validacionRegistro.js"></script>
 </body>
 
 </html>
