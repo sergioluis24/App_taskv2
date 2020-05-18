@@ -10,10 +10,10 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $tasks=0;
 $fund=0.00;
-echo("  ".$nombre);
-echo(" ".$apellidos);
-echo(" ".$password);
-echo(" ".$email);
+// Cifrado pass
+$password = password_hash($password, PASSWORD_DEFAULT);
+
+
 
 $query_add_user = "INSERT INTO users (id, nombre, apellido, email, passowrd, tasks, fund) VALUES (:id, :nombre, :apellido, :email, :passowrd, :tasks, :fund)";
 $sentencia_add_user = $mbd->prepare($query_add_user);
