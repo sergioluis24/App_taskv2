@@ -1,3 +1,10 @@
+<?php
+session_start();
+include ("Backend/data_user.php");
+if(!isset($_SESSION['CC'])){
+  header("location:login.php"); 
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,13 +34,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/contacto.html">Contacto<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/contacto.php">Contacto<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/perfilEdit.html">Editar perfil</a>
+            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/perfilEdit.php">Editar perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/login.html">Cerrar sesion</a>
+            <a class="nav-link" href="http://localhost/xampp/App_tasksV2/Backend/cerrar_sesion.php">Cerrar sesion</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -57,7 +64,7 @@
       </div>
       <div class="col-md-7">
         <p class="display-4 p-header">
-          Bienvenido Nombre a tu aplicacion
+          Bienvenido <?php echo $data_user[0]["nombre"];?> a tu aplicacion
           de tareas mas segura, sencilla y
           veloz
         </p>
@@ -65,15 +72,15 @@
       <div class="col-md-2 text-center">
         <img src="Img/perfil.jpg" alt="" class="perfil">
         <div class="text-center my-3">
-          <p class="mb-0">Nombre Apellido</p>
-          <p class="mt-0">Email@email</p>
+          <p class="mb-0"><?php echo $data_user[0]["nombre"]." ".$data_user[0]["apellido"];?></p>
+          <p class="mt-0 data_email"><?php echo $data_user[0]["email"];?></p>
           <div class="fondo">
-            <p class="titles_estate">fondo</p>
-            <p class="descript_state">10,000.00$</p>
+            <p class="titles_estate">Fondo</p>
+            <p class="descript_state"><?php echo $data_user[0]["fund"];?>$</p>
           </div>
           <div class="tareas_articulos">
             <p class="titles_estate">Tareas/Articulos</p>
-            <p class="descript_state">5/5</p>
+            <p class="descript_state"><?php echo $number_tasks[0]["number_tasks"];?>/<?php echo $number_articles[0]["number_articles"];?></p>
           </div>
         </div>
         <div class="fecha text-center">

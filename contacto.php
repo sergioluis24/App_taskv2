@@ -1,5 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION["CC"])){
+    header("location:login.php"); 
+  }
+  
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -25,14 +32,14 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/xampp/App_tasksV2/contacto.html">Contacto<span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/xampp/App_tasksV2/perfilEdit.html">Editar perfil</a>
+                        <a class="nav-link" href="http://localhost/xampp/App_tasksV2/contacto.php">Contacto<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="http://localhost/xampp/App_tasksV2/perfilEdit.php">Editar perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/xampp/App_tasksV2/login.html">Cerrar sesion</a>
+                        <a class="nav-link" href="http://localhost/xampp/App_tasksV2/Backend/cerrar_sesion.php">Cerrar sesion</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -55,28 +62,19 @@
                 <i class="fas fa-dollar-sign ico-init"></i>
             </div>
             <div class="col-md-9">
-                <div class="img-perfil perfil-center mb-5">
-                    <img src="Img/perfil.jpg" alt="" class="perfil">
-                    <i class="fas fa-pen align-top"></i>
-                </div>
-                <div class="name-edit perfil-center mb-5">
-                    <p class="text-edit">Nombre   
-                        <i class="fas fa-pen align-top ico-edit-small"></i>
+                <h2 class="display-4 mb-5">Contacto</h2>
+                <div>
+                    <p class="mb-0" style="font-size: 24px;">
+                        Telefono:
                     </p>
-                </div>
-                <div class="apellido-edit perfil-center mb-5">
-                    <p class="text-edit">
-                        Apellido
-                        <i class="fas fa-pen align-top ico-edit-small"></i>
+                    <p style="font-weight: 300;" class="mt-0"> <em>829-654-6259</em></p>
+                </div>            
+                <div class="email">
+                    <p class="mb-0" style="font-size: 24px;">
+                        Email:
                     </p>
+                    <p style="font-weight: 300;" class="mt-0"> <em>sergioluisl2324@gmail.com</em></p>
                 </div>
-                <div class="email-edit perfil-center mb-5">
-                    <p class="text-edit ml-4">
-                        Email
-                        <i class="fas fa-pen align-top ico-edit-small"></i>
-                    </p>
-                </div>
-                <button class="btn bg_blueDark  btn-passNew">Contraseña nueva</button>
             </div>
 
         </div>

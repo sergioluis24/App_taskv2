@@ -1,20 +1,38 @@
+/* Inicial */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
+input{
+    background: none;
+}
 input:focus{
+    /* background: none; */
     outline: none;
     box-shadow: none;
 }
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    text-decoration: none;
+    color: inherit; 
+}
+:root{
+    /* Colors */
+    --warning:#c0392b;
+    --blue_ligt:#1D7792;
+}
+/* Styles */
 .bg_blueDark {
     background: #142850;
 }
 
 .bg_blueLight{
-    background: #1D7792;
+    background: var(--blue_ligt);
 }
 
 .ico-init{
@@ -242,6 +260,12 @@ input:focus{
     border: 1px solid #142850;
     background: none;
     color: #142850;
+}
+.msg_error{
+    color: var(--warning);
+}
+.data_email{
+    color: var(--blue_ligt);
 }
 /* .btn-form-regist::after{
     content: "";

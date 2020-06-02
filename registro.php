@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group-regist d-flex justify-content-center flex-column align-items-center">
-                    <form action="Backend/registro.php" method="POST" class="d-flex justify-content-center flex-column align-items-center w-100" onsubmit="return validar_registro()">
+                    <form action="Backend/registro_backend.php" method="POST" class="d-flex justify-content-center flex-column align-items-center w-100" onsubmit="return validar_registro()">
                         <input type="text" class=" form-regist text-center" placeholder="Nombre" required id="nombre" name="nombre">
                         <div class="line_forms mb-5"></div>
                         <input type="text" class=" form-regist text-center" placeholder="Apellidos" required id="apellidos" name="apellidos">
