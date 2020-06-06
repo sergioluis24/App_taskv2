@@ -1,6 +1,10 @@
 <?php
 session_start();
-include ("Backend/data_user.php");
+include ("Backend/data.php");
+$data_articles = get_table_articles ($mbd);
+$notification_tasks = difference_date($mbd);
+$date_expected_month = date_expected_month ($mbd);
+// var_dump($date_expected_month);
 if(!isset($_SESSION['CC'])){
   header("location:login.php"); 
 }
@@ -19,6 +23,11 @@ if(!isset($_SESSION['CC'])){
     rel="stylesheet">
   <!-- FontAwsome -->
   <script src="https://kit.fontawesome.com/65b6d5090a.js" crossorigin="anonymous"></script>
+  <link href='core/main.css' rel='stylesheet' />
+  <link href='daygrid/main.css' rel='stylesheet' />
+
+    <script src='core/main.js'></script>
+    <script src='daygrid/main.js'></script>
 </head>
 
 <body>
@@ -84,12 +93,13 @@ if(!isset($_SESSION['CC'])){
           </div>
         </div>
         <div class="fecha text-center">
-          <i class="far fa-calendar-alt ico-2x"></i>
-          <p class="descript_state">##/##/####</p>
+         <button class="btn-calendar"  id="btn_calendar"> <i class="far fa-calendar-alt ico-2x"></i></button>
+           <div id='calendar' class=""></div>
+          <p class="mt-3 lead" id="current_date">##/##/####</p>
         </div>
         <div class="notification text-center">
           <i class="far fa-bell ico-2x notification-ico">
-            <p class="notification-number d-flex justify-content-center align-items-center">1</p>
+            <p class="notification-number d-flex justify-content-center align-items-center"><?php echo $notification_tasks[0]["notifications_tasks"]?></p>
           </i>
         </div>
       </div>
@@ -100,17 +110,18 @@ if(!isset($_SESSION['CC'])){
     <p class="lead mb-0">Tareas/Articulos</p>
     <i class="fas fa-toggle-on mt-0 mb-5 ico-toggle"></i>
     <!-- New collapse -->
+    <?php foreach($data_articles as $data_article): ?>
     <div class="accordion my-4" id="accordionExample">
       <div class="card">
         <div class="card-header bg_blueLight" id="headingOne">
           <h2 class="mb-0 d-flex flex-column">
             <button class="btn title_pestañas" type="button" data-toggle="collapse" data-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
-              {{Tittle}}
+              <?php echo $data_article["title"]?>
             </button>
             <button class="btn descript_pestañas" type="button" data-toggle="collapse" data-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
-              {{description}}
+              <?php echo $data_article["descripcion"]?>
             </button>
 
           </h2>
@@ -120,7 +131,7 @@ if(!isset($_SESSION['CC'])){
           <div class="card-body d-flex">
             <div class="time ml-3 mt-3" id="time">
               <p class="mb-0 text-card">Tiempo esperado:</p>
-              <p class="mt-0 text-card">12 meses</p>
+              <p class="mt-0 text-card"><?php echo $date_expected_month[0]['date_expected']?> Meses</p>
             </div>
             <div class="linea_lateral"></div>
             <div class="priority ml-3 mt-3" id="priority">
@@ -176,6 +187,7 @@ if(!isset($_SESSION['CC'])){
         </div>
       </div>
     </div>
+    <?php endforeach;?>
     <!-- Button add task or article -->
     <button class="btn bg_blueLight btnNewPestaña mt-4 mb-5">
       <i class="fas fa-plus text-white btn-plus-pestaña"></i>
@@ -195,7 +207,7 @@ if(!isset($_SESSION['CC'])){
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
   <script src="js/app.js"></script>
-
+  <script src="js/calendar.js"></script>
 </body>
 
 </html>

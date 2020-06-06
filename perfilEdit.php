@@ -18,9 +18,7 @@ if(!isset($_SESSION["CC"])){
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/65b6d5090a.js" crossorigin="anonymous"></script>
-
 </head>
-
 <body>
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg navbar-dark bg_blueDark">

@@ -68,12 +68,12 @@ a:hover{
     margin-bottom: 14px;
 }
 
-.descript_state {
+/* .descript_state {
     font-size: 24px;
     font-weight: 300;
     color: #DAE1E7;
     margin-top: 0;
-}
+} */
 .ico-2x{
     font-size: 33px;
 }
@@ -266,6 +266,28 @@ a:hover{
 }
 .data_email{
     color: var(--blue_ligt);
+}
+.btn-calendar{
+    background: none;
+    border: none;
+}
+.btn-calendar:focus{
+    box-shadow: none;
+    outline: none;
+}
+#calendar{
+    width: 350px;
+    /* height: ; */
+}
+.fc-header-toolbar{
+    display: flex;
+    flex-direction: column;
+}
+.fc-left{
+    margin-right: auto;
+}
+.fc-right{
+    margin-right: auto;
 }
 /* .btn-form-regist::after{
     content: "";

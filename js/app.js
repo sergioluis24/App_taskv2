@@ -1,19 +1,6 @@
-// traerData = () => {
-//     fetch(`http://localhost/xampp/App_tasksV2/backend/data.php`)
-//         .then(res => res.json())
-//         .then(data => {
-//             console.log(data)
-//         })
-//         .catch(error => console.error(error))
-// }
+let ano,mes,dia,hora,minutos,segundos
+let fecha = new Date()
 
-// // traerData()
-// let actived_sesion = () => {
-//     fetch(`http://localhost/xampp/App_tasksV2/Backend/login.php`)
-//         .then(res => res.json())
-//         .then(data => {
-//             console.log(data)
-//         })
-//         .catch(error => console.error(error))
-// }
-// actived_sesion()
+let current_date = document.getElementById("current_date").innerHTML =`
+${fecha.getMonth()}/${fecha.getDay()}/${fecha.getFullYear()}
+`
