@@ -4,10 +4,10 @@ include('conexion.php');
 
 if ($_POST) {
     $id = NULL;
-    $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $nombre = trim($_POST['nombre']);
+    $apellidos = trim($_POST['apellidos']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
     $tasks = 0;
     $fund = 0.00;
     // Cifrado pass

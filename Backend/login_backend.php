@@ -7,16 +7,16 @@ function read_users($mbd, $email_login, $password_login)
 {
     $email_login_aux = $email_login;
     $password_login_aux = $password_login;
-    $query_read_users = "SELECT * FROM users WHERE email = ?";
-    $sentencia_leer_users = $mbd->prepare($query_read_users);
-    $sentencia_leer_users->execute(array($email_login_aux));
-    $data_users = $sentencia_leer_users->fetchall();
-    if ($data_users) {
-        if (password_verify($password_login_aux, $data_users[0]["password"])) {
-            $nombre_user = $data_users[0]["nombre"]; 
+    $query_read_user = "SELECT * FROM users WHERE email = ?";
+    $sentencia_leer_user = $mbd->prepare($query_read_user);
+    $sentencia_leer_user->execute(array($email_login_aux));
+    $data_user = $sentencia_leer_user->fetchall();
+    if ($data_user) {
+        if (password_verify($password_login_aux, $data_user[0]["password"])) {
+            $nombre_user = $data_user[0]["nombre"]; 
             $_SESSION["CC"] = $nombre_user;
-            $_SESSION["id"] = $data_users[0]["id"];
-            return $data_users;
+            $_SESSION["user_id"] = $data_user[0]["id"];
+            return $data_user;
         } else {
             return "Su contraseña no es valida";
         }

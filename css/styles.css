@@ -23,8 +23,10 @@ a:hover{
 }
 :root{
     /* Colors */
+    --yellow:#f1c40f;
     --warning:#c0392b;
     --blue_ligt:#1D7792;
+    --gris:#bdc3c7;
 }
 /* Styles */
 .bg_blueDark {
@@ -288,6 +290,15 @@ a:hover{
 }
 .fc-right{
     margin-right: auto;
+}
+.badge-Normal{
+    background: var(--gris);
+}
+.badge-Medium{
+    background: var(--yellow);
+}
+.badge-High{
+    background: var(--warning);
 }
 /* .btn-form-regist::after{
     content: "";

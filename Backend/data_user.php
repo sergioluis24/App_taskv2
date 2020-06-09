@@ -2,7 +2,7 @@
 include("conexion.php");
 
 function get_table_users ($mbd){
-    $user_id = $_SESSION["id"];
+    $user_id = $_SESSION["user_id"];
     $query_read_users = "SELECT * FROM users WHERE id = ?";
     $sentencia_leer_users = $mbd->prepare($query_read_users);
     $sentencia_leer_users->execute(array($user_id));
@@ -10,7 +10,7 @@ function get_table_users ($mbd){
     return $data_user;
 }
 function get_number_tasks ($mbd){
-    $user_id = $_SESSION["id"];
+    $user_id = $_SESSION["user_id"];
     $query_read_users = "SELECT count(id) AS 'number_tasks' FROM tasks GROUP BY(user_id)";
     $sentencia_leer_users = $mbd->prepare($query_read_users);
     $sentencia_leer_users->execute();
@@ -18,7 +18,7 @@ function get_number_tasks ($mbd){
     return $data_user;
 }
 function get_number_article ($mbd){
-    $user_id = $_SESSION["id"];
+    $user_id = $_SESSION["user_id"];
     $query_read_users = "SELECT count(id) AS 'number_articles' FROM articles GROUP BY(user_id)";
     $sentencia_leer_users = $mbd->prepare($query_read_users);
     $sentencia_leer_users->execute();
