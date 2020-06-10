@@ -5,9 +5,10 @@ $user_id = $_SESSION['user_id'];
 // echo $_SESSION['user_id'];
 $data_articles = get_table_articles ($mbd,$user_id);
 $notification_tasks = difference_date($mbd,$user_id);
-$date_expected_month = date_expected_mounth ($mbd,$user_id);
-$presupuesto_mounth = calculated_mounth($mbd,$user_id);
-// var_dump($date_expected_month);
+// $date_expected_month = date_expected_mounth ($mbd,$user_id);
+// $presupuesto_mounth = calculated_mounth($mbd,$user_id);
+$date_expected_days = date_expected_days($mbd,$user_id);
+$date_expected = valid_dropdown($mbd,$user_id);
 if(!isset($_SESSION['CC'])){
   header("location:login.php"); 
 }
@@ -135,7 +136,7 @@ if(!isset($_SESSION['CC'])){
           <div class="card-body d-flex">
             <div class="time ml-3 mt-3" id="time">
               <p class="mb-0 text-card">Tiempo esperado:</p>
-              <p class="mt-0 text-card"><?php echo $date_expected_month[$i]['date_expected']?> Meses</p>
+              <p class="mt-0 text-card" id = "days_expected"><?php echo $date_expected[$i]["date_expected"];?></p>
             </div>
             <div class="linea_lateral"></div>
             <div class=" ml-3 mt-3 priority" id="priority">
@@ -175,13 +176,13 @@ if(!isset($_SESSION['CC'])){
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Presupuesto mensual
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $i?>">
-                  <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto = 'semanal'">Semanal</a>
-                  <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto = 'quincenal'">Quincenal</a>
-                  <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto = 'anual'">Anual</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Semanal">Semanal</a>
+                  <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Quincenal">Quincenal</a>
+                  <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Anual">Anual</a>
                 </div>
               </div>
-              <p class="text-card mt-0"><?php echo $presupuesto_mounth[$i];?>$</p>
+              <p class="text-card mt-0">$</p>
             </div>
           </div>
           <div class="card_description">
