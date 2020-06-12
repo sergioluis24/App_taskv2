@@ -61,6 +61,18 @@ function date_expected_quincena ($mbd,$user_id){
     }
     return $data_article;
 }
+function date_expected_semanal ($mbd,$user_id){
+    $query_read_articles = "SELECT DATEDIFF(date_expected,CURDATE()) AS 'date_expected' FROM articles WHERE user_id = $user_id;
+    ";
+    $sentencia_leer_articles = $mbd->prepare($query_read_articles);
+    $sentencia_leer_articles->execute();
+    $data_article = $sentencia_leer_articles->fetchall();
+    for($i = 0 ; $i < count($data_article) ; $i++){
+        $data_article[$i]['date_expected'] = $data_article[$i]['date_expected'] / 7;
+        $data_article[$i]['date_expected'] = round($data_article[$i]['date_expected'],0);
+    }
+    return $data_article;
+}
 function date_expected_days($mbd,$user_id){
     $query_read_articles = "SELECT DATEDIFF(date_expected,CURDATE()) AS 'date_expected' FROM articles WHERE user_id = $user_id;
     ";
@@ -70,19 +82,75 @@ function date_expected_days($mbd,$user_id){
     return $data_article;
 }
 
+function calculated_anual($mbd,$user_id){
+    $data_expected = date_expected_anual ($mbd,$user_id);
+    $data_article = get_table_articles ($mbd,$user_id);
+    
+    $presupuesto = array();
+    foreach ($data_article as $i => $data) {
+        # code...
+        if($data_expected[$i]["date_expected"] == 0){
+            array_push($presupuesto,0);
+        }else{
 
+            $data["price"] = $data["price"] - $data["ahorrado"];
+            $data = round($data["price"]/$data_expected[$i]["date_expected"],0);
+            array_push($presupuesto,$data);
+        }
+    }
+    return $presupuesto;
+}
 function calculated_mounth($mbd,$user_id){
     $data_expected = date_expected_mounth ($mbd,$user_id);
+    $data_article = get_table_articles ($mbd,$user_id);
+    
+    $presupuesto = array();
+    foreach ($data_article as $i => $data) {
+        # code...
+        if($data_expected[$i]["date_expected"] == 0){
+            array_push($presupuesto,0);
+        }else{
+            $data["price"] = $data["price"] - $data["ahorrado"];
+            $data = round($data["price"]/$data_expected[$i]["date_expected"],0);
+            array_push($presupuesto,$data);
+        }
+    }
+    return $presupuesto;
+}
+function calculated_quincenal($mbd,$user_id){
+    $data_expected = date_expected_quincena ($mbd,$user_id);
     $data_article = get_table_articles ($mbd,$user_id);
     $presupuesto = array();
     foreach ($data_article as $i => $data) {
         # code...
-        $data["price"] = $data["price"] - $data["ahorrado"];
-        $data = round($data["price"]/$data_expected[$i]["date_expected"],0);
-        array_push($presupuesto,$data);
+        if($data_expected[$i]["date_expected"] == 0){
+            array_push($presupuesto,0);
+        }else{
+            $data["price"] = $data["price"] - $data["ahorrado"];
+            $data = round($data["price"]/$data_expected[$i]["date_expected"],0);
+            array_push($presupuesto,$data);
+        }
     }
     return $presupuesto;
 }
+function calculated_semanal($mbd,$user_id){
+    $data_expected = date_expected_semanal ($mbd,$user_id);
+    $data_article = get_table_articles ($mbd,$user_id);
+    $presupuesto = array();
+    foreach ($data_article as $i => $data) {
+        # code...
+        if($data_expected[$i]["date_expected"] == 0){
+            array_push($presupuesto,0);
+        }else{
+            $data["price"] = $data["price"] - $data["ahorrado"];
+            $data = round($data["price"]/$data_expected[$i]["date_expected"],0);
+            array_push($presupuesto,$data);
+        }
+    }
+    return $presupuesto;
+}
+
+
 function valid_dropdown($mbd,$user_id){
     if($_GET["presupuesto"]){
         if($_GET["presupuesto"] == "Mensual"){
@@ -94,6 +162,45 @@ function valid_dropdown($mbd,$user_id){
         }else if($_GET["presupuesto"] == "Anual"){
             $data = date_expected_anual ($mbd,$user_id);
             return $data;
+        }else if($_GET["presupuesto"] == "Semanal"){
+            $data = date_expected_semanal ($mbd,$user_id);
+            return $data;
         }
     }
+}
+function valid_dropdown_echo(){
+    if($_GET["presupuesto"]){
+        if($_GET["presupuesto"] == "Mensual"){
+            $data = 'Presupuesto Mensual';
+            return $data;
+        }else if($_GET["presupuesto"] == "Quincenal"){
+            $data = 'Presupuesto Quincenal';
+            return $data;
+        }else if($_GET["presupuesto"] == "Anual"){
+            $data = 'Presupuesto Anual';
+            return $data;
+        }else if($_GET["presupuesto"] == "Semanal"){
+            $data = 'Presupuesto Semanal';
+            return $data;
+        }
+    }
+
+}
+function calculated_presupuesto($mbd,$user_id){
+    if($_GET["presupuesto"]){
+        if($_GET["presupuesto"] == "Mensual"){
+            $data = calculated_mounth($mbd,$user_id);
+            return $data;
+        }else if($_GET["presupuesto"] == "Quincenal"){
+            $data = calculated_quincenal($mbd,$user_id);
+            return $data;
+        }else if($_GET["presupuesto"] == "Anual"){
+            $data = calculated_anual($mbd,$user_id);
+            return $data;
+        }else if($_GET["presupuesto"] == "Semanal"){
+            $data = calculated_semanal($mbd,$user_id);
+            return $data;
+        }
+    }
+
 }

@@ -9,6 +9,8 @@ $notification_tasks = difference_date($mbd,$user_id);
 // $presupuesto_mounth = calculated_mounth($mbd,$user_id);
 $date_expected_days = date_expected_days($mbd,$user_id);
 $date_expected = valid_dropdown($mbd,$user_id);
+$valid_dropdown_echo = valid_dropdown_echo();
+$presupuesto = calculated_presupuesto($mbd,$user_id);
 if(!isset($_SESSION['CC'])){
   header("location:login.php"); 
 }
@@ -126,7 +128,7 @@ if(!isset($_SESSION['CC'])){
             </button>
             <button class="btn descript_pestañas" type="button" data-toggle="collapse" data-target="#collapseOne<?php echo $i?>"
               aria-expanded="true" aria-controls="collapseOne<?php echo $i?>">
-              <?php echo $data_articles[$i]["descripcion"]?>
+              
             </button>
 
           </h2>
@@ -174,7 +176,7 @@ if(!isset($_SESSION['CC'])){
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton<?php echo $i?>"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Presupuesto mensual
+                  <?php echo $valid_dropdown_echo;?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Semanal">Semanal</a>
@@ -182,15 +184,13 @@ if(!isset($_SESSION['CC'])){
                   <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Anual">Anual</a>
                 </div>
               </div>
-              <p class="text-card mt-0">$</p>
+              <p class="text-card mt-0"><?php echo $presupuesto[$i];?>$</p>
             </div>
           </div>
           <div class="card_description">
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo minima, ad cum nobis tempore cupiditate
-              pariatur consequatur dolorum sint asperiores temporibus odio quis iure quidem libero tenetur laboriosam
-              dicta eos vitae quisquam quod ducimus rem aut sapiente! Excepturi recusandae distinctio error blanditiis
-              ab? Ipsa, doloribus? Accusantium provident aliquid blanditiis culpa.
+            <p>
+            <?php echo $data_articles[$i]["descripcion"]?>
             </p>
           </div>
           <div class="buttons-group-operations mt-4 mb-3">
