@@ -194,7 +194,7 @@ if(!isset($_SESSION['CC'])){
             </p>
           </div>
           <div class="buttons-group-operations mt-4 mb-3">
-            <button class="btn btn-comprado mr-2">Comprado</button>
+            <button class="btn btn-comprado mr-2" onclick="verify_buy()"><a href="Backend/verify_buy.php?article_id=<?php echo $i?>&user_id=<?php echo $user_id?>">Comprado</a></button>
             <button class="btn btn-agregar mr-2">agregar
               <i class="fas fa-dollar-sign ico-agregar"></i>
             </button>
@@ -204,6 +204,7 @@ if(!isset($_SESSION['CC'])){
             <button class="btn btn-eliminar">elimnar
               <i class="fas fa-times"></i>
             </button>
+            
           </div>
         </div>
       </div>

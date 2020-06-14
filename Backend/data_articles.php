@@ -2,7 +2,7 @@
 include("conexion.php");
 
 function get_table_articles ($mbd,$user_id){
-    $query_read_articles = "SELECT * FROM articles WHERE user_id = $user_id";
+    $query_read_articles = "SELECT * FROM articles WHERE user_id = $user_id AND estado = 0";
     $sentencia_leer_articles = $mbd->prepare($query_read_articles);
     $sentencia_leer_articles->execute();
     $data_article = $sentencia_leer_articles->fetchall();
