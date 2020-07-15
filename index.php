@@ -38,6 +38,12 @@ if(!isset($_SESSION['CC'])){
 
 <body>
 
+<?php if(isset($_GET["error"]) AND $_GET["error"] === "No tienes fondos suficientes"):?>
+<div class="modal_personal py-4 bg-danger text-white w-50 d-flex justify-content-center align-items-center">
+  <p class="my-0">No puedes comprar este articulo, insufientes fondos</p>
+</div>
+<?php endif;?>
+
   <!-- Nav -->
   <nav class="navbar navbar-expand-lg navbar-dark bg_blueDark">
     <div class="container">
@@ -110,6 +116,7 @@ if(!isset($_SESSION['CC'])){
         </div>
       </div>
     </div>
+    
     <!-- Section pestañas -->
     <hr class="my-5">
     <h2 class="text-center my-5">Lista de articulos</h2>
@@ -184,7 +191,24 @@ if(!isset($_SESSION['CC'])){
                   <a class="dropdown-item" href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Anual">Anual</a>
                 </div>
               </div>
-              <p class="text-card mt-0"><?php echo $presupuesto[$i];?>$</p>
+              <p class="text-card mt-0 <?php 
+                            if(can_buy($mbd,$user_id,$i)){
+
+                              echo "";
+                            }else{
+                              echo "text-success";
+                            }
+              
+              ?>"><?php
+              
+              if(can_buy($mbd,$user_id,$i)){
+
+                echo $presupuesto[$i];
+              }else{
+                echo "<b>Ya lo puedes comprar!<b>";
+              }
+              ?>
+               </p>
             </div>
           </div>
           <div class="card_description">
@@ -194,7 +218,7 @@ if(!isset($_SESSION['CC'])){
             </p>
           </div>
           <div class="buttons-group-operations mt-4 mb-3">
-            <button class="btn btn-comprado mr-2" onclick="verify_buy()"><a href="Backend/verify_buy.php?article_id=<?php echo $i?>&user_id=<?php echo $user_id?>">Comprado</a></button>
+            <button class="btn btn-comprado mr-2"><a href="Backend/verify_buy.php?article_id=<?php echo $data_articles[$i]["id"]?>&user_id=<?php echo $user_id?>">Comprado</a></button>
             <button class="btn btn-agregar mr-2">agregar
               <i class="fas fa-dollar-sign ico-agregar"></i>
             </button>

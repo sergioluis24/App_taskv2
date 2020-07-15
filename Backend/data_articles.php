@@ -204,3 +204,17 @@ function calculated_presupuesto($mbd,$user_id){
     }
 
 }
+function can_buy($mbd,$user_id,$i){
+    $query_read_date = "SELECT  *  FROM articles WHERE user_id = $user_id AND estado = 0";
+    $sentencia_leer_date = $mbd->prepare($query_read_date);
+    $sentencia_leer_date->execute();
+    $data_date = $sentencia_leer_date->fetchall();
+    $bool=true;
+    if($data_date[$i]["price"] > $data_date[$i]["ahorrado"]){
+        $bool = true;
+    }else {
+        $bool = false;
+    }
+    return $bool;
+
+}

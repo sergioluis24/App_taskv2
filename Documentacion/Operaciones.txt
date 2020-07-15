@@ -1,0 +1,8 @@
+********************Cosas para hoy**********************
+-Presentar error al comprar algo sin fondos suficientes
+********************Cosas pendientes********************
+-Presentar error al comprar algo sin fondos suficientes
+[Quede terminando el diseño del modal]
+********************Funcionalidades siguientes**********
+********************Funcionalidades a futuro************
+********************Observaciones***********************
