@@ -15,7 +15,11 @@ function get_number_tasks ($mbd){
     $sentencia_leer_users = $mbd->prepare($query_read_users);
     $sentencia_leer_users->execute();
     $data_user = $sentencia_leer_users->fetchall();
-    return $data_user;
+    if($data_user){
+        return $data_user;
+    }else{
+        return $data_user = 0;
+    }
 }
 function get_number_article ($mbd){
     $user_id = $_SESSION["user_id"];
@@ -23,7 +27,11 @@ function get_number_article ($mbd){
     $sentencia_leer_users = $mbd->prepare($query_read_users);
     $sentencia_leer_users->execute();
     $data_user = $sentencia_leer_users->fetchall();
-    return $data_user;
+    if($data_user){
+        return $data_user;
+    }else{
+        return $data_user = 0;
+    }
 }
 $number_articles = get_number_article ($mbd);
 $number_tasks = get_number_tasks ($mbd);

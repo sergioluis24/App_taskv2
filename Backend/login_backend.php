@@ -5,7 +5,7 @@ $_SESSION["errores"]=NULL;
 $data_aux;
 function read_users($mbd, $email_login, $password_login)
 {
-    $email_login_aux = $email_login;
+     $email_login_aux = $email_login;
     $password_login_aux = $password_login;
     $query_read_user = "SELECT * FROM users WHERE email = ?";
     $sentencia_leer_user = $mbd->prepare($query_read_user);
@@ -16,6 +16,7 @@ function read_users($mbd, $email_login, $password_login)
             $nombre_user = $data_user[0]["nombre"]; 
             $_SESSION["CC"] = $nombre_user;
             $_SESSION["user_id"] = $data_user[0]["id"];
+            echo "Entre al pass";
             return $data_user;
         } else {
             return "Su contraseña no es valida";

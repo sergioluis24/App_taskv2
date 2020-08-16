@@ -38,7 +38,7 @@
                         <div class="line_forms mb-5"></div>
                         <div class="butto-group-regist">
                             <input type="submit" class="btn bg_blueDark text-white d-block btn-form-regist" value="Registrar" id="btn_registrar">
-                            <button class="btn bg_blueDark text-white d-block btn-form-regist"><a href="http://localhost/xampp/App_tasksV2/login.html">Ya tengo una cuenta</a></button>
+                            <button class="btn bg_blueDark text-white d-block btn-form-regist"><a href="http://localhost/xampp/App_tasksV2/login.php">Ya tengo una cuenta</a></button>
                         </div>
        
                     </form>

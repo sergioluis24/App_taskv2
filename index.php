@@ -3,6 +3,11 @@ session_start();
 include ("Backend/data.php");
 $user_id = $_SESSION['user_id'];
 // echo $_SESSION['user_id'];
+// if($number_tasks == 0){
+//   $number_tasks = 0;
+//   echo "entre";
+// }
+// var_dump($number_tasks);
 $data_articles = get_table_articles ($mbd,$user_id);
 $notification_tasks = difference_date($mbd,$user_id);
 // $date_expected_month = date_expected_mounth ($mbd,$user_id);
@@ -101,7 +106,15 @@ if(!isset($_SESSION['CC'])){
           </div>
           <div class="tareas_articulos">
             <p class="titles_estate">Tareas/Articulos</p>
-            <p class="descript_state"><?php echo $number_tasks[0]["number_tasks"];?>/<?php echo $number_articles[0]["number_articles"];?></p>
+            <p class="descript_state"><?php 
+            if($number_tasks != 0){
+              echo $number_tasks[0]["number_tasks"];
+            }else{echo '0';}?>/<?php 
+            if($number_articles != 0){
+             echo $number_articles[0]["number_articles"];
+            }else {echo '0';}
+            ?>
+            </p>
           </div>
         </div>
         <div class="fecha text-center">
@@ -219,7 +232,7 @@ if(!isset($_SESSION['CC'])){
           </div>
           <div class="buttons-group-operations mt-4 mb-3">
             <button class="btn btn-comprado mr-2"><a href="Backend/verify_buy.php?article_id=<?php echo $data_articles[$i]["id"]?>&user_id=<?php echo $user_id?>">Comprado</a></button>
-            <button class="btn btn-agregar mr-2">agregar
+            <button class="btn btn-agregar mr-2" id = "agregar_btn"><a href="index.php?presupuesto=Mensual&agregar=<?php echo $i?>">agregar</a> 
               <i class="fas fa-dollar-sign ico-agregar"></i>
             </button>
             <button class="btn btn-editar mr-2">editar
@@ -228,7 +241,22 @@ if(!isset($_SESSION['CC'])){
             <button class="btn btn-eliminar">elimnar
               <i class="fas fa-times"></i>
             </button>
-            
+              <div class="agregar_form form-group w-50 mt-4 ml-4" id='agregar_form <?php echo $i?>'>
+              <?php if(isset($_GET["agregar"]) && !isset($_GET["agregado"])):
+                $agregar_id = $_GET["agregar"];
+                if($i == $agregar_id):
+
+              ?>
+                <form method="POST" action = "Backend/agregar_fondo.php?id=<?php echo $i?>">
+                  <input type="number" name="agregar_input" id="" class = "form-control " placeholder = '0'>
+                  <button class="btn btn-primary mt-3 ml-2" type= "submit">Aceptar</button>
+                  </form>
+              <?php endif;?>
+              <?php endif;?>
+              <?php if(isset($_GET["agregado"]  )):?>
+                <p class = "py-4 bg-success text-white">Ha agregado fondos correctamente</p>
+              <?php endif;?>
+              </div>
           </div>
         </div>
       </div>

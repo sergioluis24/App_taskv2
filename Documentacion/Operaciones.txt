@@ -1,8 +1,7 @@
 ********************Cosas para hoy**********************
--Presentar error al comprar algo sin fondos suficientes
+-Trabajar con el boton agregar
 ********************Cosas pendientes********************
--Presentar error al comprar algo sin fondos suficientes
-[Quede terminando el diseño del modal]
+-Funcionalidad del boton aceptar en agregar.
 ********************Funcionalidades siguientes**********
 ********************Funcionalidades a futuro************
 ********************Observaciones***********************

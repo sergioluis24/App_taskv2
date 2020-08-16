@@ -6,7 +6,7 @@ CREATE TABLE users (
     nombre        VARCHAR(50) NOT NULL,
     apellido     VARCHAR(50) NOT NULL,
     email       VARCHAR(50) NOT NULL,
-    passowrd    VARCHAR(50) NOT NULL,
+    password    VARCHAR(150) NOT NULL,
     tasks       INT(10) NOT NULL,
     fund        FLOAT(10,2) NOT NULL,
     CONSTRAINT pk_users PRIMARY KEY(id)
@@ -36,7 +36,9 @@ CREATE TABLE articles (
     id_priority     INT(10) NOT NULL,
     title           VARCHAR(50) NOT NULL,
     descripcion     MEDIUMTEXT NOT NULL,
-    estado           BOOLEAN NOT NULL,
+    ahorrado        INT(10) NOT NULL,
+    price           FLOAT(10,2) NOT NULL,
+    estado          BOOLEAN NOT NULL,
     date_registry   DATE NOT NULL,
     date_expected   DATE NOT NULL,
     CONSTRAINT pk_articles PRIMARY KEY(id),
@@ -49,10 +51,10 @@ INSERT INTO priority VALUES (NULL,'medium');
 INSERT INTO priority VALUES (NULL,'high');
 
 -- Article
-INSERT INTO articles VALUES (NULL,1,1, "Primer articulo", "Solo consisto en un ejemplo",FALSE, "5/9/2020", "5/11/2020");
+INSERT INTO articles VALUES (NULL,1,2, "Primer3 articulo", "Solo consisto en un ejemplo3", 500, 2000,FALSE, '2020/9/5', '2020/11/5');
 
 -- Task
-INSERT INTO tasks VALUES (NULL,1,1, "Primer tarea", "Solo consisto en un ejemplo",FALSE, "5/9/2020", "5/11/2020");
+INSERT INTO tasks VALUES (NULL,1,1, "Primer tarea", "Solo consisto en un ejemplo",FALSE, "2020/9/5", "2020/11/5");
 
 -- Users
 INSERT INTO users VALUES (NULL, "Sergio Luis", "Hernandez Cruz", "sergioluis2324@gmail.com", "sergioluis123", 0, 500);

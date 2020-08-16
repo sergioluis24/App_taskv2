@@ -51,7 +51,7 @@
         <hr>
         <p class="lead">Ahora has tu primer inicio de sesion</p>
         <button class="btn bg_blueDark text-white">
-        <a href="http://localhost/xampp/App_tasksV2/login.html">Login</a>
+        <a href="http://localhost/xampp/App_tasksV2/login.php">Login</a>
         </button>
     </div>
 </body>
