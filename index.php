@@ -253,8 +253,14 @@ if(!isset($_SESSION['CC'])){
                   </form>
               <?php endif;?>
               <?php endif;?>
-              <?php if(isset($_GET["agregado"]  )):?>
-                <p class = "py-4 bg-success text-white">Ha agregado fondos correctamente</p>
+              <?php if(isset($_GET["agregado"]  )):
+                 $agregado_id = $_GET["id_agregado"];
+                 if($i == $agregado_id):
+ 
+               ?>
+
+                <p class = "py-4 px-3 bg-success text-white">Ha agregado fondos correctamente</p>
+                <?php endif;?>
               <?php endif;?>
               </div>
           </div>
