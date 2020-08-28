@@ -235,7 +235,7 @@ if(!isset($_SESSION['CC'])){
             <button class="btn btn-agregar mr-2" id = "agregar_btn"><a href="index.php?presupuesto=Mensual&agregar=<?php echo $i?>">agregar</a> 
               <i class="fas fa-dollar-sign ico-agregar"></i>
             </button>
-            <button class="btn btn-editar mr-2">editar
+            <button class="btn btn-editar mr-2"><a href="edit.php?id_article=<?php echo $i?>&user_id=<?php echo $user_id?>">editar</a>
               <i class="fas fa-pen"></i>
             </button>
             <button class="btn btn-eliminar">elimnar
