@@ -14,14 +14,14 @@ if($_GET){
     <title>Edicion</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
     rel="stylesheet">
-  <!-- FontAwsome -->
-  <script src="https://kit.fontawesome.com/65b6d5090a.js" crossorigin="anonymous"></script>
-  <link href='core/main.css' rel='stylesheet' />
-  <link href='daygrid/main.css' rel='stylesheet' />
-
+    <!-- FontAwsome -->
+    <script src="https://kit.fontawesome.com/65b6d5090a.js" crossorigin="anonymous"></script>
+    <link href='core/main.css' rel='stylesheet' />
+    <link href='daygrid/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/styles.css">
+    
     <script src='core/main.js'></script>
     <script src='daygrid/main.js'></script>
 
@@ -61,13 +61,27 @@ if($_GET){
     </div>
   </nav>
 
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5 pt-4">
         <i class="d-flex justify-content-center">
             <h2 class="display-4">Edicion</h2>
         </i>
     </div>
-    <div class="data_article">
-        <div class="tittle"><?php echo $data_article[$id_article-1]['title']?></div>
+    <div class="data_article mt-5 pt-4 container">
+      <input type="text" class="input_edit input_title d-block my-4" placeholder="<?php echo $data_article[$id_article-1]['title']?>">
+      <input type="text" class="input_edit input_date" placeholder="<?php echo $data_article[$id_article-1]['date_expected']?>"> 
+
+      <!-- <div class="prioritys mb-4"> -->
+        <span class="badge_edit priority_edit text-white badge badge-Normal mt-0 text-card">Normal</span>
+
+        <span class="badge_edit  text-white badge badge-Medium mt-0 text-card mx-3">Medium</span>
+
+        <span class="badge_edit  text-white badge badge-High mt-0 text-card">High</span>
+
+        <div class="price_edit d-block">
+          <p>Precio</p>
+        </div>
+
+      <!-- </div> -->
     </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

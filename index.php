@@ -29,13 +29,13 @@ if(!isset($_SESSION['CC'])){
   <title>App Task</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
     rel="stylesheet">
-  <!-- FontAwsome -->
-  <script src="https://kit.fontawesome.com/65b6d5090a.js" crossorigin="anonymous"></script>
-  <link href='core/main.css' rel='stylesheet' />
-  <link href='daygrid/main.css' rel='stylesheet' />
+    <!-- FontAwsome -->
+    <script src="https://kit.fontawesome.com/65b6d5090a.js" crossorigin="anonymous"></script>
+    <link href='core/main.css' rel='stylesheet' />
+    <link href='daygrid/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/styles.css">
 
     <script src='core/main.js'></script>
     <script src='daygrid/main.js'></script>
@@ -163,7 +163,7 @@ if(!isset($_SESSION['CC'])){
             <div class="linea_lateral"></div>
             <div class=" ml-3 mt-3 priority" id="priority">
               <p class="text-card mb-0">prioridad:</p>
-              <span class="text-white badge badge-<?php
+              <span class="text-white  badge badge-<?php
               if($data_articles[$i]["id_priority"] == 1){
                 echo "Normal";
               }else if($data_articles[$i]["id_priority"] == 2){
@@ -171,7 +171,7 @@ if(!isset($_SESSION['CC'])){
               }else{
                 echo "High";
               }
-              ?> mt-0 text-card"><?php
+              ?> mt-0 text-card badge_edit"><?php
               if($data_articles[$i]["id_priority"] == 1){
                 echo "Normal";
               }else if($data_articles[$i]["id_priority"] == 2){

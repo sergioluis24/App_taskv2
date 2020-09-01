@@ -308,6 +308,21 @@ a:hover{
     top: 50vh;
     left: 50vh;
 }
+.input_edit{
+    padding: .7rem;
+    font-size: 1.3rem;
+}
+.input_date{
+    padding: .2rem;
+    font-size: .9rem;
+}
+.priority_edit{
+    margin-left: 20rem;
+}
+.badge_edit{
+    width: 6rem;
+    height: 28px;
+}
 /* .btn-form-regist::after{
     content: "";
     position: absolute;
