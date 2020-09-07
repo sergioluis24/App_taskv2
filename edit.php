@@ -31,7 +31,7 @@ if($_GET){
 <nav class="navbar navbar-expand-lg navbar-dark bg_blueDark">
     <div class="container">
       <div class="ico-menu">
-        <a href="http://localhost/xampp/App_tasksV2/">
+        <a href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Mensual">
           <i class="fas fa-sticky-note text-white h5"></i>
         </a>
       </div>
@@ -66,22 +66,27 @@ if($_GET){
             <h2 class="display-4">Edicion</h2>
         </i>
     </div>
-    <div class="data_article mt-5 pt-4 container">
-      <input type="text" class="input_edit input_title d-block my-4" placeholder="<?php echo $data_article[$id_article-1]['title']?>">
-      <input type="text" class="input_edit input_date" placeholder="<?php echo $data_article[$id_article-1]['date_expected']?>"> 
+    <div class="container">
+      <div class="data_article mt-5 pt-4 d-flex">
+          <input type="text" class="input_edit input_title d-block my-4" placeholder="<?php echo $data_article[$id_article-1]['title']?>">
 
-      <!-- <div class="prioritys mb-4"> -->
-        <span class="badge_edit priority_edit text-white badge badge-Normal mt-0 text-card">Normal</span>
+          <!-- <div class="prioritys mb-4"> -->
+            <span class="badge_edit priority_edit text-white badge badge-Normal mt-0 text-card">Normal</span>
 
-        <span class="badge_edit  text-white badge badge-Medium mt-0 text-card mx-3">Medium</span>
+            <span class="badge_edit  text-white badge badge-Medium mt-0 text-card mx-3">Medium</span>
 
-        <span class="badge_edit  text-white badge badge-High mt-0 text-card">High</span>
+            <span class="badge_edit  text-white badge badge-High mt-0 text-card ">High</span>
 
-        <div class="price_edit d-block">
-          <p>Precio</p>
+            <!-- <div class="price_edit d-inline"> -->
+              <p class="ml_rem15 edit_label"><b>Precio</b></p>
+              <p class="ml_rem15 edit_label"><b>Ahorrado</b></p>
+            <!-- </div> -->
+
+          <!-- </div> -->
         </div>
-
-      <!-- </div> -->
+        <input type="text" class="input_edit input_date" placeholder="<?php echo $data_article[$id_article-1]['date_expected']?>"> 
+        <input type="text" class="input_edit input_price" placeholder="<?php echo $data_article[$id_article-1]['price']?>">
+        <input type="text" class="input_edit input_ahorrado" placeholder="<?php echo $data_article[$id_article-1]['ahorrado']?>">
     </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

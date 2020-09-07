@@ -317,11 +317,28 @@ a:hover{
     font-size: .9rem;
 }
 .priority_edit{
-    margin-left: 20rem;
+    margin-left: 15rem;
 }
 .badge_edit{
     width: 6rem;
     height: 28px;
+}
+.ml_rem15{
+    margin-left: 15rem;
+}
+.input_price{
+    padding: .2rem;
+    font-size: .9rem;
+    margin-left: 55rem; 
+    /* margin-top: -5rem; */
+}
+.edit_label{
+    font-size: 1.4rem;
+}
+.input_ahorrado{
+    padding: .2rem;
+    font-size: .9rem;
+    margin-left: 8rem;
 }
 /* .btn-form-regist::after{
     content: "";

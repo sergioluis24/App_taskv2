@@ -53,7 +53,7 @@ if(!isset($_SESSION['CC'])){
   <nav class="navbar navbar-expand-lg navbar-dark bg_blueDark">
     <div class="container">
       <div class="ico-menu">
-        <a href="http://localhost/xampp/App_tasksV2/">
+        <a href="http://localhost/xampp/App_tasksV2/index.php?presupuesto=Mensual">
           <i class="fas fa-sticky-note text-white h5"></i>
         </a>
       </div>
