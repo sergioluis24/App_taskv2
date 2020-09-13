@@ -340,6 +340,20 @@ a:hover{
     font-size: .9rem;
     margin-left: 8rem;
 }
+.description-edit{
+    
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    box-shadow: .5px .9px 3px .1px rgba(0,0,0,0.75);
+}
+.none-input{
+    border: none;
+}
+.btn__editar:hover{
+    color: #1D7792;
+    border: 1px solid #1D7792;
+    background:none;
+
+}
 /* .btn-form-regist::after{
     content: "";
     position: absolute;

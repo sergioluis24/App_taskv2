@@ -62,13 +62,14 @@ if($_GET){
   </nav>
 
     <div class="container-fluid mt-5 pt-4">
+    <form method="POST" action = "Backend/edit_article.php?id_article=<?php echo $id_article?>&user_id=<?php echo $user_id?>">
         <i class="d-flex justify-content-center">
             <h2 class="display-4">Edicion</h2>
         </i>
     </div>
     <div class="container">
       <div class="data_article mt-5 pt-4 d-flex">
-          <input type="text" class="input_edit input_title d-block my-4" placeholder="<?php echo $data_article[$id_article-1]['title']?>">
+          <input type="text" class="input_edit input_title d-block my-4" name="title" placeholder="<?php echo $data_article[$id_article-1]['title']?>">
 
           <!-- <div class="prioritys mb-4"> -->
             <span class="badge_edit priority_edit text-white badge badge-Normal mt-0 text-card">Normal</span>
@@ -84,9 +85,19 @@ if($_GET){
 
           <!-- </div> -->
         </div>
-        <input type="text" class="input_edit input_date" placeholder="<?php echo $data_article[$id_article-1]['date_expected']?>"> 
-        <input type="text" class="input_edit input_price" placeholder="<?php echo $data_article[$id_article-1]['price']?>">
-        <input type="text" class="input_edit input_ahorrado" placeholder="<?php echo $data_article[$id_article-1]['ahorrado']?>">
+        <input type="text" class="input_edit input_date" name="date_expected" placeholder="<?php echo $data_article[$id_article-1]['date_expected']?>"> 
+        <input type="text" class="input_edit input_price" name="price" placeholder="<?php echo $data_article[$id_article-1]['price']?>">
+        <input type="text" class="input_edit input_ahorrado" name="ahorrado" placeholder="<?php echo $data_article[$id_article-1]['ahorrado']?>">
+        <!-- Descripcion -->
+        <div class="description-edit  mt-5 py-4 px-4">
+        <input type="text" class="none-input w-100" name="ahorrado" placeholder="<?php echo $data_article[$id_article-1]['descripcion']?>">
+
+        </div>
+        <div class="buttons-edit">
+          <button class="btn btn-eliminar mt-3 btn__editar" type="submit">Editar</button>
+        </div>
+        </form>
+
     </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
