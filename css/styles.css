@@ -309,8 +309,11 @@ a:hover{
     left: 50vh;
 }
 .input_edit{
-    padding: .7rem;
+    /* padding: .7rem; */
     font-size: 1.3rem;
+    display: inline;
+    width: 15rem;
+
 }
 .input_date{
     padding: .2rem;
@@ -329,7 +332,7 @@ a:hover{
 .input_price{
     padding: .2rem;
     font-size: .9rem;
-    margin-left: 55rem; 
+    margin-left: 5rem; 
     /* margin-top: -5rem; */
 }
 .edit_label{
@@ -353,6 +356,12 @@ a:hover{
     border: 1px solid #1D7792;
     background:none;
 
+}
+.select-priority{
+    /* margin-top: 2rem;
+    margin-left: 5rem;
+    margin-right: 0; */
+    margin-left: 14.5rem; 
 }
 /* .btn-form-regist::after{
     content: "";

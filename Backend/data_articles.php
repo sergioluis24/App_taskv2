@@ -218,3 +218,10 @@ function can_buy($mbd,$user_id,$i){
     return $bool;
 
 }
+function found($mbd,$user_id){
+    $query_read_date = "SELECT SUM(ahorrado) AS 'fondos' FROM articles";
+    $sentencia_leer_date = $mbd->prepare($query_read_date);
+    $sentencia_leer_date->execute();
+    $data_date = $sentencia_leer_date->fetchall();
+    return $data_date;
+}

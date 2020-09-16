@@ -69,34 +69,41 @@ if($_GET){
     </div>
     <div class="container">
       <div class="data_article mt-5 pt-4 d-flex">
-          <input type="text" class="input_edit input_title d-block my-4" name="title" placeholder="<?php echo $data_article[$id_article-1]['title']?>">
+          <input type="text" class="input_edit input_title d-block my-4 form-control" name="title" placeholder="<?php echo $data_article[$id_article-1]['title']?>">
 
           <!-- <div class="prioritys mb-4"> -->
-            <span class="badge_edit priority_edit text-white badge badge-Normal mt-0 text-card">Normal</span>
-
-            <span class="badge_edit  text-white badge badge-Medium mt-0 text-card mx-3">Medium</span>
-
-            <span class="badge_edit  text-white badge badge-High mt-0 text-card ">High</span>
-
             <!-- <div class="price_edit d-inline"> -->
+              <p class="ml_rem15 edit_label">Prioridad</p>
               <p class="ml_rem15 edit_label"><b>Precio</b></p>
               <p class="ml_rem15 edit_label"><b>Ahorrado</b></p>
             <!-- </div> -->
 
           <!-- </div> -->
         </div>
-        <input type="text" class="input_edit input_date" name="date_expected" placeholder="<?php echo $data_article[$id_article-1]['date_expected']?>"> 
-        <input type="text" class="input_edit input_price" name="price" placeholder="<?php echo $data_article[$id_article-1]['price']?>">
-        <input type="text" class="input_edit input_ahorrado" name="ahorrado" placeholder="<?php echo $data_article[$id_article-1]['ahorrado']?>">
+        <input type="date" id="" class="form-control input_edit" name="date_expected" value="<?php echo $data_article[$id_article-1]['date_expected']?>">
+
+        <select name="id_priority" id="" class="select-priority input_edit form-control">
+          <option value=""></option>
+          <option value="1">Normal</option>
+          <option value="2">Medium</option>
+          <option value="3">High</option>
+          </select>
+
+
+        <input type="text" class="input_edit input_price form-control" name="price" placeholder="<?php echo $data_article[$id_article-1]['price']?>">
+        <input type="text" class="input_edit input_ahorrado form-control" name="ahorrado" placeholder="<?php echo $data_article[$id_article-1]['ahorrado']?>">
         <!-- Descripcion -->
         <div class="description-edit  mt-5 py-4 px-4">
-        <input type="text" class="none-input w-100" name="ahorrado" placeholder="<?php echo $data_article[$id_article-1]['descripcion']?>">
+        <input type="text" class="none-input w-100 " name="descripcion" placeholder="<?php echo $data_article[$id_article-1]['descripcion']?>">
 
         </div>
         <div class="buttons-edit">
           <button class="btn btn-eliminar mt-3 btn__editar" type="submit">Editar</button>
         </div>
         </form>
+
+
+        
 
     </div>
 

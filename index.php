@@ -16,6 +16,7 @@ $date_expected_days = date_expected_days($mbd,$user_id);
 $date_expected = valid_dropdown($mbd,$user_id);
 $valid_dropdown_echo = valid_dropdown_echo();
 $presupuesto = calculated_presupuesto($mbd,$user_id);
+$fondos = found($mbd,$user_id);
 if(!isset($_SESSION['CC'])){
   header("location:login.php"); 
 }
@@ -102,7 +103,7 @@ if(!isset($_SESSION['CC'])){
           <p class="mt-0 data_email"><?php echo $data_user[0]["email"];?></p>
           <div class="fondo">
             <p class="titles_estate">Fondo</p>
-            <p class="descript_state"><?php echo $data_user[0]["fund"];?>$</p>
+            <p class="descript_state"><?php echo $fondos[0]['fondos'];?>$</p>
           </div>
           <div class="tareas_articulos">
             <p class="titles_estate">Tareas/Articulos</p>
@@ -238,7 +239,7 @@ if(!isset($_SESSION['CC'])){
             <button class="btn btn-editar mr-2"><a href="edit.php?id_article=<?php echo $i?>&user_id=<?php echo $user_id?>">editar</a>
               <i class="fas fa-pen"></i>
             </button>
-            <button class="btn btn-eliminar">elimnar
+            <button class="btn btn-eliminar"><a href="Backend/eliminar_article.php?id_article=<?php echo $data_articles[$i]["id"]?>&user_id=<?php echo $user_id?>">elimnar</a>
               <i class="fas fa-times"></i>
             </button>
               <div class="agregar_form form-group w-50 mt-4 ml-4" id='agregar_form <?php echo $i?>'>
